@@ -65,7 +65,7 @@
     <VsixType>v3</VsixType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>qbusSRL.vMerge</RootNamespace>
-    <AssemblyName>vMergeVS2017</AssemblyName>
+    <AssemblyName>vMergeVS2019</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
