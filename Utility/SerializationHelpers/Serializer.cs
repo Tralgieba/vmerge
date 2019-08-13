@@ -158,7 +158,7 @@ namespace alexbegh.Utility.SerializationHelpers
             // TR: Dictionary mit deserialisierten Objekten wieder serialisieren, um es in Datei speichern zu können
             JsonSerializer serializer = new JsonSerializer();
 
-            using (StreamWriter sw = new StreamWriter(@"C:/Users/RoederT/Desktop/ergebnis.txt"))
+            using (StreamWriter sw = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ergebnis.txt")))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 serializer.Serialize(writer, obj);
