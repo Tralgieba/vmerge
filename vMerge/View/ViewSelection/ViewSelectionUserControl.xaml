@@ -6,8 +6,8 @@
              xmlns:LoadingProgress="clr-namespace:alexbegh.Utility.UserControls.LoadingProgress.Control;assembly=Utility"
              xmlns:Converters="clr-namespace:alexbegh.vMerge.View.Converters"
              xmlns:m="clr-namespace:alexbegh.vMerge.Model.Implementation"
-             Background="{DynamicResource VsBrush.Window}"
-             Foreground="{DynamicResource VsBrush.WindowText}"
+             Background="#f1f1f1"
+             Foreground="Black"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="500"
              IsEnabled="{Binding Path=Enabled}" Margin="0">

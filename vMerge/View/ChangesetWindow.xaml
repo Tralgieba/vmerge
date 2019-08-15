@@ -161,10 +161,10 @@
                                     <DataTemplate x:Key="Type:alexbegh.vMerge.ViewModel.MultiLineString">
                                         <StackPanel Orientation="Vertical">
                                             <StackPanel Orientation="Horizontal" Visibility="{Binding IsExpanded, Converter={StaticResource BooleanToInvisibilityConverter}}">
-                                                <TextBlock>
-                                                    <Hyperlink Command="{Binding ToggleCommand}" TextDecorations="{x:Null}">
+                                                <!--<TextBlock>
+                                                    <Hyperlink Command="{Binding ToggleCommand}" TextDecorations="{x:Null}">-->
                                                         <TextBlock 
-                                                            Text="{Binding Path=Value, Converter={StaticResource StringToSingleLineConverter}}" 
+                                                            Text="{Binding Path=Value, Converter={StaticResource StringToSingleLineConverter}}"
                                                             TextWrapping="NoWrap"
                                                             TextTrimming="CharacterEllipsis">
                                                             <TextBlock.ToolTip>
@@ -172,8 +172,8 @@
                                                             Text="{Binding Path=Value}" />
                                                             </TextBlock.ToolTip>
                                                         </TextBlock>
-                                                    </Hyperlink>
-                                                </TextBlock>
+                                                    <!--</Hyperlink>
+                                                </TextBlock>-->
                                             </StackPanel>
                                             <Grid Visibility="{Binding IsExpanded, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                 <TextBlock Grid.Row="0" Grid.Column="0"
@@ -189,11 +189,12 @@
                                     </DataTemplate>
                                 </FieldMapperGrid:FieldMapperGridControl.ItemTemplates>
                                 <FieldMapperGrid:FieldMapperGridControl.ContextMenu>
-                                    <vsi:VsContextMenu Opened="ContextMenu_Opened">
+                                    <!--<ContextMenu Opened="ContextMenu_Opened">-->
+                                    <ContextMenu>
                                         <MenuItem Header="Choose columns"
                                         Command="{Binding PlacementTarget.Tag.ConfigureColumnsCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}">
                                             <MenuItem.Icon>
-                                                <Image Source="/vMerge;component/Resources/SelectColumn_361.png" />
+                                                <Image Source="../Resources/SelectColumn_361.png" />
                                             </MenuItem.Icon>
                                         </MenuItem>
                                         <Separator />
@@ -201,24 +202,24 @@
                                               Command="{Binding PlacementTarget.Tag.ViewChangesetCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}" 
                                               CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}">
                                             <MenuItem.Icon>
-                                                <Image Source="/vMerge;component/Resources/ViewChangesetDetails_13274.png" />
+                                                <Image Source="../Resources/ViewChangesetDetails_13274.png" />
                                             </MenuItem.Icon>
                                         </MenuItem>
                                         <MenuItem Header="Track changeset ..." 
                                               Command="{Binding PlacementTarget.Tag.TrackChangesetCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}" 
                                               CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}">
                                             <MenuItem.Icon>
-                                                <Image Source="/vMerge;component/Resources/HierarchyTracking_13282.png" />
+                                                <Image Source="../Resources/HierarchyTracking_13282.png" />
                                             </MenuItem.Icon>
                                         </MenuItem>
                                         <Separator />
                                         <MenuItem Header="Refresh"
                                               Command="{Binding PlacementTarget.Tag.RefreshCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}">
                                             <MenuItem.Icon>
-                                                <Image Source="/vMerge;component/Resources/refresh_16xLG.png" />
+                                                <Image Source="../Resources/refresh_16xLG.png" />
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                    </vsi:VsContextMenu>
+                                    </ContextMenu>
                                 </FieldMapperGrid:FieldMapperGridControl.ContextMenu>
                             </FieldMapperGrid:FieldMapperGridControl>
                         </LoadingProgress:LoadingProgressControl>
@@ -230,7 +231,7 @@
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Grid.Row="0" Grid.Column="0">
                     <TextBlock>
-                Please complete the current merge first.<LineBreak />
+                        Please complete the current merge first.<LineBreak />
                     </TextBlock>
                     <Button Width="150" Content="Focus merge view" Command="{Binding ShowMergeViewCommand}" Margin="3"/>
                 </StackPanel>

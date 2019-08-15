@@ -223,7 +223,8 @@ namespace alexbegh.vMerge.StudioIntegration.Framework
             try
             {
                 _attachedFrames.Clear();
-                string pathToTools = Environment.GetEnvironmentVariable("VS140COMNTOOLS");
+                string pathToTools = Environment.GetEnvironmentVariable("VS160COMNTOOLS");
+                if (String.IsNullOrEmpty(pathToTools)) pathToTools = Environment.GetEnvironmentVariable("VS140COMNTOOLS");
                 if (String.IsNullOrEmpty(pathToTools)) pathToTools = Environment.GetEnvironmentVariable("VS150COMNTOOLS");
                 if (String.IsNullOrEmpty(pathToTools)) pathToTools = Environment.GetEnvironmentVariable("VS130COMNTOOLS");
                 if (String.IsNullOrEmpty(pathToTools)) pathToTools = Environment.GetEnvironmentVariable("VS100COMNTOOLS");

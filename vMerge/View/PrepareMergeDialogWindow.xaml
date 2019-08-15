@@ -10,8 +10,8 @@
         xmlns:Converters="clr-namespace:alexbegh.vMerge.View.Converters"
         xmlns:controls="clr-namespace:alexbegh.vMerge.View.Controls"
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
-        Background="{DynamicResource VsBrush.Window}"
-        Foreground="{DynamicResource VsBrush.WindowText}"
+        Background="#f1f1f1"
+        Foreground="Black"
         mc:Ignorable="d"
         d:DesignHeight="400" d:DesignWidth="755.518">
     <UserControl.Resources>
