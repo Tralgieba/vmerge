@@ -139,32 +139,11 @@ namespace alexbegh.Utility.SerializationHelpers
         /// <param name="obj">The resulting object</param>
         public static void JSonDeserialize<T_Type>(string targetPath, out T_Type obj)
         {
-            // TR: nur Test
-            SimpleLogger.Log(SimpleLogLevel.Info, "Do Json-deserialize.");
-
-            // TR: auskommentiert, um Test darunter zu verwenden
-            //using (StreamReader file = File.OpenText(targetPath))
-            //{
-            //    JsonSerializer serializer = new JsonSerializer();
-            //    obj = (T_Type)serializer.Deserialize(file, typeof(T_Type));
-            //}
-
             using (StreamReader file = File.OpenText(targetPath))
             {
                 JsonSerializer deserializer = new JsonSerializer();
                 obj = (T_Type)deserializer.Deserialize(file, typeof(T_Type));
             }
-
-            // TR: Dictionary mit deserialisierten Objekten wieder serialisieren, um es in Datei speichern zu können
-            JsonSerializer serializer = new JsonSerializer();
-
-            using (StreamWriter sw = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ergebnis.txt")))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-                serializer.Serialize(writer, obj);
-            }
-
-            SimpleLogger.Log(SimpleLogLevel.Info, "ERNEUTE SERIALISIERUNG nach ergebnis.txt geschrieben.");
         }
 
         /// <summary>
